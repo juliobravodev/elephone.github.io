@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page con Opciones de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Banco de Chile</h1>
+    <ul>
+        <li id="linea1" onclick="copiarAlPortapapeles('linea1')">Inversiones Soto Yanez SpA</li>
+        <li id="linea2" onclick="copiarAlPortapapeles('linea2')">77247346K</li>
+        <li id="linea4" onclick="copiarAlPortapapeles('linea4')">Cuenta Corriente</li>
+        <li id="linea5" onclick="copiarAlPortapapeles('linea5')">008015836400</li>
+        <li id="email1" onclick="copiarAlPortapapeles('email1')">elephone2101@gmail.com</li>
+    </ul>
+
+    <h1>Banco Santander</h1>
+    <ul>
+        <li id="elephone1" onclick="copiarAlPortapapeles('elephone1')">Elephone.cl</li>
+        <li id="cuenta1" onclick="copiarAlPortapapeles('cuenta1')">Cuenta Corriente</li>
+        <li id="rut1" onclick="copiarAlPortapapeles('rut1')">86142805</li>
+        <li id="rut2" onclick="copiarAlPortapapeles('rut2')">77247346K</li>
+        <li id="email1" onclick="copiarAlPortapapeles('email1')">elephone2101@gmail.com</li>
+    </ul>
+
+    <h1>Banco Ripley</h1>
+    <ul>
+        <li id="elephone3" onclick="copiarAlPortapapeles('elephone3')">Elephone.cl</li>
+        <li id="cuenta3" onclick="copiarAlPortapapeles('cuenta3')">Cuenta Vista</li>
+        <li id="cuenta3num" onclick="copiarAlPortapapeles('cuenta3num')">4041055211</li>
+        <li id="email2" onclick="copiarAlPortapapeles('email2')">elephone2101@gmail.com</li>
+        <li id="rut4" onclick="copiarAlPortapapeles('rut4')">263497228</li>
+    </ul>
+
+    <h1>Banco Falabella</h1>
+    <ul>
+        <li id="elephone4" onclick="copiarAlPortapapeles('elephone4')">Elephone.cl</li>
+        <li id="rut5" onclick="copiarAlPortapapeles('rut5')">263497228</li>
+        <li id="email3" onclick="copiarAlPortapapeles('email3')">elephone2101@gmail.com</li>
+        <li id="cuenta4" onclick="copiarAlPortapapeles('cuenta4')">Cuenta Corriente</li>
+        <li id="cuenta4num" onclick="copiarAlPortapapeles('cuenta4num')">15200172446</li>
+    </ul>
+
+    <script>
+        function copiarAlPortapapeles(elementId) {
+            const elemento = document.getElementById(elementId);
+            const texto = elemento.textContent;
+
+            const textarea = document.createElement('textarea');
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(textarea);
+
+            alert('Texto copiado al portapapeles: ' + texto);
+        }
+    </script>
+</body>
+</html>
